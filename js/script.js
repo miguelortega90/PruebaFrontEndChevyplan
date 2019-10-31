@@ -28,6 +28,12 @@ function ValidacionFormulario(){
 		ErrNumeroDocuClie = true;
 		$("#NumeroDocumentoCliente").after('<div class="alertError">Campo Requerido.</div>');
 	}
+	else{
+		if(NumeroDocumentoCliente.value.length < 6 ){
+			ErrNumeroDocuClie = true;
+			$("#NumeroDocumentoCliente").after('<div class="alertError">Debe ser mayor a 6 digitos.</div>');
+		}
+	}
 	
 	if(PaisCliente.value == ""){
 		ErrPaisClie = true;
@@ -54,7 +60,7 @@ function ValidacionFormulario(){
 		ErrCheckTerminos = true;
 		$("#LabelPoliticasPrivacidad").after('<div class="alertError">Debe aceptar politicas de privacidad.</div>');
 	}
-		
+	
 	if(ErrNombreClie == false && ErrTipoDocuClie == false && ErrNumeroDocuClie == false && ErrPaisClie == false && ErrCelularClie == false &&
 	   ErrCorreoClie == false && ErrCheckTerminos == false){
 		   alert("Información enviada Exitosamente , Gracias");
