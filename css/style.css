@@ -94,6 +94,11 @@ body{
     box-shadow: 0px 3px 0px var(--GrisPerla);
 	width:100%;
 }
+
+.CustImput-error{
+	box-shadow: 0px 3px 0px var(--Rojo) !important;
+}
+
 input.CustImput:focus, input.CustImput:active{
 	 box-shadow: 0px 3px 0px var(--Azul);
 	 outline:none;
