@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="Landing ChevyPlan">
+    <meta name="keywords" content="ChevyPlan, Landing">
+    <meta name="author" content="Miguel Ortega">
+    <title>ChevyPlan - Programate</title>
+
+    <!-- Estilos CND -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic' rel='stylesheet' type='text/css'>
+    <!-- Estilos CND -->
+    <link rel="stylesheet" href="lib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <script src="lib/Jquery/jquery-3.4.1.js"></script>
+
+    <!-- Estilos -->
+	<link rel="stylesheet" href="css/style.css" />
+    <!-- Estilos -->
+
+	
+
+</head>
+<body>
+    <div class="container BackLanding">
+        <div class="row totalContent">
+            <div class="col-sm-6">
+				<div class="AlignMiddle hsepare1">
+					<p class="TitulosTexto">Plan Progr&aacute;mate</p>
+					<p class="DescripcionTexto">Ahora t&uacute; planeas cu&aacute;ndo ser&aacute;s adjudicado para tu nuevo veh&iacute;culo Chevrolet.</p>
+				</div>
+            </div>
+            <div class="col-sm-6">
+				<div class="AlignMiddle hsepare2">
+					<div class="ContForm">
+						<form id="Contacto" name="Contacto">
+							<p class="TitulosFormularios text-center">¿QUÉ ESPERAS PARA CUMPLIR TU SUEÑO?</p>
+							<p class="text-center CuerpoFormularios">Deja tus datos y nos comunicaremos contigo.</p>
+							<div class="form-group">
+								<label for="NombreCliente" class="LabelInput ">Nombre Completo</label>
+								<input type="text" name="NombreCliente" id="NombreCliente" class="CustImput" placeholder="Nombre Completo" value="" required />
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="TipoDocumentoCliente" class="LabelInput ">Tipo de documento</label>
+										<select name="TipoDocumentoCliente"  id="TipoDocumentoCliente" class="CustSelect">
+											<option value="0" disabled selected>Tipo de documento</option>
+											<option value="1">Tarjeta de identidad</option>
+											<option value="2">Cédula ciudadanía</option>
+											<option value="3">Cédula extranjera</option>
+											<option value="4">Pasaporte</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="NumeroDocumentoCliente" class="LabelInput ">Número Documento</label>
+										<input type="text" name="NumeroDocumentoCliente" id="NumeroDocumentoCliente" class="CustImput" placeholder="Número Documento" value="" required />
+										<span class="invalid-feedback">Campo Requerido.</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="PaisCliente" class="LabelInput ">País</label>
+										<select name="PaisCliente" id="PaisCliente" class="CustSelect">
+											<option value="" disabled selected>País</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="CelularCliente" class="LabelInput ">Celular</label>
+										<input type="text" name="CelularCliente" id="CelularCliente" class="CustImput" placeholder="Celular" value="" required />
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-group">
+									<label for="CorreoCliente" class="LabelInput ">Correo Electrónico</label>
+									<input type="text" name="CorreoCliente" id="CorreoCliente" class="CustImput" placeholder="Correo Electrónico" value="" required />
+								</div>
+							</div>
+							<div class="form-group form-check hsepare4">
+								<div class="form-group">
+									<input type="checkbox" class="form-check-input" id="PoliticaPrivacidad" name="PoliticaPrivacidad">
+									<label class="form-check-label TextoTerminos" id="LabelPoliticasPrivacidad" for="politicaPrivacidad">Leí y acepto condiciones de la <a class="linkTerminos" href="#">política de privacidad</a></label>
+								</div>
+							</div>
+							<div class="row hsepare3">
+								<div class="col-sm-12">
+									<button type="button" class="btnEnviar text-center" onClick="ValidacionFormulario()">Enviar</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- Scripts -->
+	<script src="js/script.js"></script>
+	<!-- Scripts -->
+</body>
+</html>

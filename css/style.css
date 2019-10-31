@@ -1,0 +1,182 @@
+:root {
+	--blanco: #fff;
+	--Azul: #154289;
+	--Rojo: #942D46;
+	--GrisArtico: #E1E1E1;
+	--GrisPerla: #707070;
+	--GrisPizarra: #4A4A4A;
+	--GrisLobo: #232323;
+	--Magenta: #6B3176;
+}
+body{
+	background-color:#000;
+	height: 100vh;
+}
+.container {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+}
+.form-group{
+	margin-bottom: 5px;
+}
+.totalContent{
+	width: 100%;
+	height: 100%;
+}
+.BackLanding {
+	background: url("../img/FondoProgramate.jpg") no-repeat;
+}
+.hsepare1{
+	padding: 0 60px;
+}
+.hsepare2{
+	padding: 0 80px;
+}
+.hsepare3{
+	margin: 20px 0 0 auto;
+}
+.hsepare4{
+	margin: 20px 0 0 auto;
+}
+.AlignMiddle{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.TitulosTexto{
+	font-size: 36px;
+    color: var(--blanco);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+.DescripcionTexto{
+	font-size: 20px;
+	color: var(--blanco);
+    font-family: Arial, sans-serif;
+}
+.TitulosFormularios{
+	font-size: 20px;
+    color: var(--GrisPizarra);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+	margin: 5px 0;
+}
+.CuerpoFormularios{
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	color: var(--GrisPizarra);
+}
+.ContForm{
+	background-color: rgba(189, 189, 189, 0.85);
+    padding: 25px 20px;
+	-webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+}
+
+.CustImput {
+	font-family: Arial, sans-serif;
+    padding: 8px;
+    font-size: 15px;
+    border-width: 1px;
+    border-color: var(--GrisArtico);
+    background-color: var(--GrisArtico);
+    color: var(--GrisPerla);
+    border-style: solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0px 3px 0px var(--GrisPerla);
+	width:100%;
+}
+input.CustImput:focus, input.CustImput:active{
+	 box-shadow: 0px 3px 0px var(--Azul);
+	 outline:none;
+}
+
+.LabelInput{
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 13px;
+	margin: 0px 0px 4px 6px;
+	color: var(--Azul);
+	opacity:0;
+}
+.labelfocus{
+	opacity:1;
+}
+.TextoTerminos{
+	font-family: Arial, sans-serif;
+	color: var(--GrisLobo);
+	font-size: 14px;
+}
+.linkTerminos{
+	text-decoration: underline;
+}
+
+.CustSelect{
+	padding: 8px;
+	font-size: 15px;
+	 border-width: 1px;
+    border-color: var(--GrisArtico);
+    background-color: var(--GrisArtico);
+    color: var(--GrisPerla);
+	border-style: solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0px 3px 0px var(--GrisPerla);
+	width:100%;
+}
+select.CustSelect:focus, select.CustSelect:active{
+	 box-shadow: 0px 3px 0px var(--Azul);
+	 outline:none;
+}
+.btnEnviar {
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;
+	font-style: italic;
+	font-family: Arial;
+	cursor: pointer;
+	color: var(--blanco);
+	font-size: 20px;
+	background: var(--Azul);
+	padding: 4px 20px 4px 20px;
+	text-decoration: none;
+	width: 100%;
+	max-width: 175px;
+	display: block;
+    border: 0;
+    margin: 0 auto;
+}
+
+.btnEnviar:hover {
+	color: var(--blanco);
+	background:var(--Magenta);
+	text-decoration: none;
+	outline:none;
+}
+.btnEnviar:disabled{
+	color: var(--GrisArtico);
+	background:var(--GrisPizarra);
+}
+.alertError{
+	font-family: Arial;
+    font-size: 10px;
+    color: var(--Rojo);
+    margin: 3px 0 0 0;
+}
+
+@media only screen and (max-width: 1200px) {
+	.hsepare2{
+		padding: 0;
+	}
+}
