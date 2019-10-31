@@ -54,15 +54,7 @@ function ValidacionFormulario(){
 		ErrCheckTerminos = true;
 		$("#LabelPoliticasPrivacidad").after('<div class="alertError">Debe aceptar politicas de privacidad.</div>');
 	}
-	
-	var ErrNombreClie = false;
-	var ErrTipoDocuClie = false;
-	var ErrNumeroDocuClie = false;
-	var ErrPaisClie = false;
-	var ErrCelularClie = false;
-	var ErrCorreoClie = false;
-	var ErrCheckTerminos = false;
-	
+		
 	if(ErrNombreClie == false && ErrTipoDocuClie == false && ErrNumeroDocuClie == false && ErrPaisClie == false && ErrCelularClie == false &&
 	   ErrCorreoClie == false && ErrCheckTerminos == false){
 		   alert("Información enviada Exitosamente , Gracias");
