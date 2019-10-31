@@ -6,6 +6,7 @@ $('#CelularCliente').bind('keypress', MascaraNumero);
 
 function ValidacionFormulario(){
 	$(".alertError").remove();
+	LimpiarEstiloError();
 	var ErrNombreClie = false;
 	var ErrTipoDocuClie = false;
 	var ErrNumeroDocuClie = false;
@@ -17,48 +18,57 @@ function ValidacionFormulario(){
 	if(NombreCliente.value == ""){
 		ErrNombreClie = true;
 		$("#NombreCliente").after('<div class="alertError">Campo Requerido.</div>');
+		$("#NombreCliente").addClass("CustImput-error");
 	}
 		
 	if(TipoDocumentoCliente.value == "0"){
 		ErrTipoDocuClie = true;
 		$("#TipoDocumentoCliente").after('<div class="alertError">Campo Requerido.</div>');
+		$("#TipoDocumentoCliente").addClass("CustImput-error");
 	}
 	
 	if(NumeroDocumentoCliente.value == ""){
 		ErrNumeroDocuClie = true;
 		$("#NumeroDocumentoCliente").after('<div class="alertError">Campo Requerido.</div>');
+		$("#NumeroDocumentoCliente").addClass("CustImput-error");
 	}
 	else{
 		if(NumeroDocumentoCliente.value.length < 6 || NumeroDocumentoCliente.value.length > 10){
 			ErrNumeroDocuClie = true;
 			$("#NumeroDocumentoCliente").after('<div class="alertError">Debe ser mayor a 6 digitos y menor a 10.</div>');
+			$("#NumeroDocumentoCliente").addClass("CustImput-error");
 		}
 	}
 	
 	if(PaisCliente.value == ""){
 		ErrPaisClie = true;
 		$("#PaisCliente").after('<div class="alertError">Campo Requerido.</div>');
+		$("#PaisCliente").addClass("CustImput-error");
 	}
 	
 	if(CelularCliente.value == ""){
 		ErrCelularClie = true;
 		$("#CelularCliente").after('<div class="alertError">Campo Requerido.</div>');
+		$("#CelularCliente").addClass("CustImput-error");
 	}
 	else{
-		if(NumeroDocumentoCliente.value.length == 10){
-			ErrNumeroDocuClie = true;
-			$("#NumeroDocumentoCliente").after('<div class="alertError">Debe ser de 10 digitos.</div>');
+		if(CelularCliente.value.length == 10){
+			ErrCelularClie = true;
+			$("#CelularCliente").after('<div class="alertError">Debe ser de 10 digitos.</div>');
+			$("#CelularCliente").addClass("CustImput-error");
 		}
 	}
 	
 	if(CorreoCliente.value == ""){
 		ErrCorreoClie = true;
 		$("#CorreoCliente").after('<div class="alertError">Campo Requerido.</div>');
+		$("#CorreoCliente").addClass("CustImput-error");
 	}
 	else{
 		if(ValidarCorreo(CorreoCliente.value) == false){
 			ErrCorreoClie = true;
 			$("#CorreoCliente").after('<div class="alertError">Formato no permitido.</div>');
+			$("#CorreoCliente").addClass("CustImput-error");
 		}
 	}
 	
@@ -72,6 +82,15 @@ function ValidacionFormulario(){
 		   alert("Información enviada Exitosamente , Gracias");
 		   location.reload();
 	}
+}
+
+function LimpiarEstiloError(){
+	$("#NombreCliente").removeClass("CustImput-error");
+	$("#TipoDocumentoCliente").removeClass("CustImput-error");
+	$("#NumeroDocumentoCliente").removeClass("CustImput-error");
+	$("#PaisCliente").removeClass("CustImput-error");
+	$("#CelularCliente").removeClass("CustImput-error");
+	$("#CorreoCliente").removeClass("CustImput-error");
 }
 
 function MascaraLetras(event) {
