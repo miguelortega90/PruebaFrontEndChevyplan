@@ -29,9 +29,9 @@ function ValidacionFormulario(){
 		$("#NumeroDocumentoCliente").after('<div class="alertError">Campo Requerido.</div>');
 	}
 	else{
-		if(NumeroDocumentoCliente.value.length < 6 ){
+		if(NumeroDocumentoCliente.value.length < 6 || NumeroDocumentoCliente.value.length > 10){
 			ErrNumeroDocuClie = true;
-			$("#NumeroDocumentoCliente").after('<div class="alertError">Debe ser mayor a 6 digitos.</div>');
+			$("#NumeroDocumentoCliente").after('<div class="alertError">Debe ser mayor a 6 digitos y menor a 10.</div>');
 		}
 	}
 	
@@ -43,6 +43,12 @@ function ValidacionFormulario(){
 	if(CelularCliente.value == ""){
 		ErrCelularClie = true;
 		$("#CelularCliente").after('<div class="alertError">Campo Requerido.</div>');
+	}
+	else{
+		if(NumeroDocumentoCliente.value.length == 10){
+			ErrNumeroDocuClie = true;
+			$("#NumeroDocumentoCliente").after('<div class="alertError">Debe ser de 10 digitos.</div>');
+		}
 	}
 	
 	if(CorreoCliente.value == ""){
