@@ -96,6 +96,7 @@ body{
 }
 
 .CustImput-error{
+	border-color: var(--Rojo);
 	box-shadow: 0px 3px 0px var(--Rojo) !important;
 }
 
@@ -111,7 +112,6 @@ input.CustImput:focus, input.CustImput:active{
 	line-height: 13px;
 	margin: 0px 0px 4px 6px;
 	color: var(--Azul);
-	opacity:0;
 }
 .labelfocus{
 	opacity:1;
