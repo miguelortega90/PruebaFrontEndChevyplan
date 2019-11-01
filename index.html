@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html ng-app="chevyplan" lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,7 @@
     <title>ChevyPlan - Programate</title>
 
     <!-- Estilos CND -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic' rel='stylesheet' type='text/css'>
@@ -20,46 +21,43 @@
     <!-- Estilos -->
 	<link rel="stylesheet" href="css/style.css" />
     <!-- Estilos -->
-
-	
-
+	<!-- Scripts -->
+	<script src="js/script.js"></script>
+	<!-- Scripts -->
 </head>
 <body>
-    <div class="container BackLanding">
-        <div class="row totalContent">
-            <div class="col-sm-6">
+	<div ng-controller="FormularioRegistroCtrl as Form" class="container BackLanding">
+		<div class="row totalContent">
+			<div class="col-sm-6">
 				<div class="AlignMiddle hsepare1">
 					<p class="TitulosTexto">Plan Progr&aacute;mate</p>
 					<p class="DescripcionTexto">Ahora t&uacute; planeas cu&aacute;ndo ser&aacute;s adjudicado para tu nuevo veh&iacute;culo Chevrolet.</p>
 				</div>
-            </div>
-            <div class="col-sm-6">
+			</div>
+			<div class="col-sm-6">
 				<div class="AlignMiddle hsepare2">
 					<div class="ContForm">
 						<form id="Contacto" name="Contacto">
 							<p class="TitulosFormularios text-center">¿QUÉ ESPERAS PARA CUMPLIR TU SUEÑO?</p>
 							<p class="text-center CuerpoFormularios">Deja tus datos y nos comunicaremos contigo.</p>
 							<div class="form-group">
-								<label for="NombreCliente" class="LabelInput ">Nombre Completo</label>
-								<input type="text" name="NombreCliente" id="NombreCliente" class="CustImput" placeholder="Nombre Completo" value="" required />
+								<label ng-if="Form.NombreCliente.length > 0" for="NombreCliente" class="LabelInput">Nombre Completo</label>
+								<label ng-if="Form.NombreCliente == undefined" class="LabelInput"></label>
+								<input type="text" name="NombreCliente" id="NombreCliente" class="CustImput" ng-model="Form.NombreCliente" placeholder="Nombre Completo" value="" required />
 							</div>
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<label for="TipoDocumentoCliente" class="LabelInput ">Tipo de documento</label>
-										<select name="TipoDocumentoCliente"  id="TipoDocumentoCliente" class="CustSelect">
-											<option value="0" disabled selected>Tipo de documento</option>
-											<option value="1">Tarjeta de identidad</option>
-											<option value="2">Cédula ciudadanía</option>
-											<option value="3">Cédula extranjera</option>
-											<option value="4">Pasaporte</option>
-										</select>
+										<label ng-if="Form.TipoDocumentoCliente.Codigo > -1" for="TipoDocumentoCliente" class="LabelInput ">Tipo de documento</label>
+										<label ng-if="Form.TipoDocumentoCliente.Codigo <= -1" for="TipoDocumentoCliente" class="LabelInput "></label>
+										<select name="TipoDocumentoCliente" id="TipoDocumentoCliente" ng-model="Form.TipoDocumentoCliente" class="CustSelect" ng-options="i.Nombre for i in Form.ListadoTipoDocumentos"></select>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
-										<label for="NumeroDocumentoCliente" class="LabelInput ">Número Documento</label>
-										<input type="text" name="NumeroDocumentoCliente" id="NumeroDocumentoCliente" class="CustImput" placeholder="Número Documento" value="" required />
+										<label ng-if="Form.NumeroDocumentoCliente.length > 0" for="NumeroDocumentoCliente" class="LabelInput ">Número Documento</label>
+										<label ng-if="Form.NumeroDocumentoCliente == undefined" for="NumeroDocumentoCliente" class="LabelInput "></label>
+										<input type="text" name="NumeroDocumentoCliente" id="NumeroDocumentoCliente" ng-model="Form.NumeroDocumentoCliente" class="CustImput" placeholder="Número Documento" value="" required />
 										<span class="invalid-feedback">Campo Requerido.</span>
 									</div>
 								</div>
@@ -67,44 +65,42 @@
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
-										<label for="PaisCliente" class="LabelInput ">País</label>
-										<select name="PaisCliente" id="PaisCliente" class="CustSelect">
-											<option value="" disabled selected>País</option>
-										</select>
+										<label ng-if="Form.PaisCliente.numericCode > -1" for="PaisCliente" class="LabelInput ">País</label>
+										<label ng-if="Form.PaisCliente.numericCode <= -1" for="PaisCliente" class="LabelInput "></label>
+										<select name="PaisCliente" id="PaisCliente" ng-model="Form.PaisCliente" class="CustSelect" ng-options="i.Nombre for i in Form.ListadoPaises"></select>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
-										<label for="CelularCliente" class="LabelInput ">Celular</label>
-										<input type="text" name="CelularCliente" id="CelularCliente" class="CustImput" placeholder="Celular" value="" required />
+										<label ng-if="Form.CelularCliente.length > 0" for="CelularCliente" class="LabelInput ">Celular</label>
+										<label ng-if="Form.CelularCliente == undefined" for="CelularCliente" class="LabelInput "></label>
+										<input type="text" name="CelularCliente" id="CelularCliente" ng-model="Form.CelularCliente" class="CustImput" placeholder="Celular" value="" required />
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="form-group">
-									<label for="CorreoCliente" class="LabelInput ">Correo Electrónico</label>
-									<input type="text" name="CorreoCliente" id="CorreoCliente" class="CustImput" placeholder="Correo Electrónico" value="" required />
+									<label ng-if="Form.CorreoCliente.length > 0" for="CorreoCliente" class="LabelInput ">Correo Electrónico</label>
+									<label ng-if="Form.CorreoCliente == undefined" for="CorreoCliente" class="LabelInput "></label>
+									<input type="text" name="CorreoCliente" id="CorreoCliente" ng-model="Form.CorreoCliente" class="CustImput" placeholder="Correo Electrónico" value="" required />
 								</div>
 							</div>
 							<div class="form-group form-check hsepare4">
 								<div class="form-group">
-									<input type="checkbox" class="form-check-input" id="PoliticaPrivacidad" name="PoliticaPrivacidad">
+									<input type="checkbox" class="form-check-input" id="PoliticaPrivacidad" name="PoliticaPrivacidad" ng-model="Form.PoliticaPrivacidad">
 									<label class="form-check-label TextoTerminos" id="LabelPoliticasPrivacidad" for="politicaPrivacidad">Leí y acepto condiciones de la <a class="linkTerminos" href="#">política de privacidad</a></label>
 								</div>
 							</div>
 							<div class="row hsepare3">
 								<div class="col-sm-12">
-									<button type="button" class="btnEnviar text-center" onClick="ValidacionFormulario()">Enviar</button>
+									<button type="button" class="btnEnviar text-center" ng-click="Form.ValidacionFormulario()">Enviar</button>
 								</div>
 							</div>
 						</form>
 					</div>
 				</div>
-            </div>
-        </div>
-    </div>
-	<!-- Scripts -->
-	<script src="js/script.js"></script>
-	<!-- Scripts -->
+			</div>
+		</div>
+	</div>
 </body>
 </html>
